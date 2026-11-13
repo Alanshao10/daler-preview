@@ -95,7 +95,14 @@ button { font: inherit; }
 .mark-name { font-family: var(--font-display); font-size: 1.2rem; line-height: 1; white-space: nowrap; text-transform: uppercase; letter-spacing: 0.12em; }
 .mark-name small { font: inherit; margin-left: 0.45em; }
 .mark-name { transition: opacity 400ms var(--ease-out), transform 400ms var(--ease-out); }
-.js .top:not(.is-scrolled) .mark-name { opacity: 0; transform: translateY(-6px); }
+
+/* табличка с названием: рельеф без движения */
+.mark { padding: 6px 18px 6px 14px; border: 1px solid color-mix(in srgb, var(--brass) 55%, var(--rule)); border-radius: 6px;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--chromite-3) 92%, #fff) 0%, var(--chromite-2) 55%, var(--chromite) 100%);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.14), inset 0 -2px 0 rgba(0,0,0,.55), 0 3px 0 rgba(0,0,0,.45), 0 8px 16px rgba(0,0,0,.45); }
+.mark .gem { color: var(--brass); filter: drop-shadow(0 2px 0 rgba(0,0,0,.6)); }
+.mark-name { font-size: 1.05rem; font-weight: 400; letter-spacing: 0.15em; color: var(--brass);
+  text-shadow: 0 1px 0 color-mix(in srgb, var(--brass) 60%, #000), 0 2px 0 color-mix(in srgb, var(--brass) 38%, #000), 0 3px 0 color-mix(in srgb, var(--brass) 22%, #000), 0 5px 8px rgba(0,0,0,.65); }
 .menu { display: flex; gap: 22px; }
 .menu a { display: inline-flex; align-items: center; min-height: var(--tap); text-decoration: none; font-size: var(--text-sm); color: var(--ivory-muted); transition: color var(--dur-short) var(--ease-out); }
 .menu a:hover { color: var(--ivory); }
@@ -114,14 +121,14 @@ button { font: inherit; }
 .burger nav a:hover { background: var(--chromite-3); }
 
 /* первый экран */
-.hero { position: relative; isolation: isolate; padding-top: 32px; }
+.hero { position: relative; isolation: isolate; padding-top: 40px; }
 .hero::before { content: ""; position: absolute; inset: 0; z-index: -1; background: radial-gradient(70% 60% at 85% 25%, color-mix(in oklab, var(--emerald) 7%, var(--chromite-3)), transparent 72%); pointer-events: none; }
 .masthead { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 0.5em; margin: 0; padding-bottom: 20px; border-bottom: 1px solid var(--rule); font-family: var(--font-display); font-size: clamp(1.5rem, 1.3vw + 1rem, 2.3rem); line-height: 1.15; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ivory); }
 .masthead span { white-space: nowrap; }
 @keyframes letter { to { transform: none; } }
 
 
-.hero-grid { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 56px; align-items: start; margin-top: 36px; padding-bottom: 72px; }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 56px; align-items: start; margin-top: 12px; padding-bottom: 72px; }
 .hero h1 { font-family: var(--font-display); font-size: clamp(2rem, 1.5vw + 1.2rem, 2.85rem); line-height: 1.12; max-width: 24ch; }
 .h1-own { display: block; margin-top: 0.12em; color: var(--emerald-light); }
 .claim { margin-top: 28px; padding: 18px 0 18px 24px; border-left: 3px solid var(--emerald-light); background: linear-gradient(to right, color-mix(in oklab, var(--emerald) 16%, transparent), transparent); font-size: clamp(1.2rem, 0.5vw + 1.05rem, 1.45rem); line-height: 1.45; color: var(--ivory); max-width: 36ch; }
@@ -350,7 +357,8 @@ figcaption { margin-top: 14px; font-size: var(--text-sm); color: var(--ivory-mut
   .top .container { min-height: 64px; gap: 10px; }
   .mark { gap: 9px; }
   .mark svg { width: 24px; height: 24px; }
-  .mark-name { font-size: 0.95rem; letter-spacing: 0.08em; }
+  .mark { padding: 5px 10px 5px 8px; gap: 8px; }
+  .mark-name { font-size: 0.8rem; letter-spacing: 0.07em; }
   .mark-name small { display: none; }
   .mark-name small { font: inherit; margin-left: 0.45em; }
   .top-phone span { display: none; }
@@ -457,7 +465,6 @@ figcaption { margin-top: 14px; font-size: var(--text-sm); color: var(--ivory-mut
 <main id="top">
   <section class="hero" aria-labelledby="h1">
     <div class="container">
-      <p class="masthead" id="masthead"><span>Nowrozuddin</span> <span>Zazai Ltd</span></p>
 
       <div class="hero-grid">
         <div class="hero-text">
