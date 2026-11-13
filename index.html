@@ -28,13 +28,13 @@
   var f=document.getElementById('f'),bs=document.querySelectorAll('.bar button');
   function show(v){
     if(['a','b','c'].indexOf(v)<0)v='a';
-    f.src=v+'/';
+    f.src=v+'/?r='+Date.now();
     for(var i=0;i<bs.length;i++)bs[i].setAttribute('aria-pressed',bs[i].dataset.v===v?'true':'false');
     try{history.replaceState(null,'','#'+v)}catch(e){}
   }
   for(var i=0;i<bs.length;i++)bs[i].addEventListener('click',function(){show(this.dataset.v)});
   var h=(location.hash||'').replace('#','');
-  if(h)show(h);
+  show(h||'a');
 })();
 </script>
 </body>
